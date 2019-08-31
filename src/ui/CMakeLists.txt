@@ -12,6 +12,7 @@ add_library(ui
   CommitToolBar.cpp
   ContextMenuButton.cpp
   DetailView.cpp
+  DiffListWidget.cpp
   DiffView.cpp
   DiffWidget.cpp
   EditorWindow.cpp

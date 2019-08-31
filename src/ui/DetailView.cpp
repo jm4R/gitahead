@@ -9,6 +9,7 @@
 
 #include "DetailView.h"
 #include "Badge.h"
+#include "DiffListWidget.h"
 #include "DiffWidget.h"
 #include "MenuBar.h"
 #include "TreeWidget.h"
@@ -731,8 +732,9 @@ DetailView::DetailView(const git::Repository &repo, QWidget *parent)
   mContent = new QStackedWidget(this);
   layout->addWidget(mContent, 1);
 
-  mContent->addWidget(new DiffWidget(repo, this));
-  mContent->addWidget(new TreeWidget(repo, this));
+	mContent->addWidget(new DiffWidget(repo, this));
+	mContent->addWidget(new TreeWidget(repo, this));
+	mContent->addWidget(new DiffListWidget(repo, this));
 }
 
 DetailView::~DetailView() {}

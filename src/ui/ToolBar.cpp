@@ -566,7 +566,7 @@ public:
       path2.lineTo(x + 4, y + 3);
       painter.drawPath(path2);
 
-    } else {
+    } else if (mMode == RepoView::Tree) {
       QPainterPath path;
       path.addEllipse(x - 8, y - 7, 4, 4);
       path.addEllipse(x, y - 7, 4, 4);
@@ -582,6 +582,23 @@ public:
       path.moveTo(x + 5, y + 5);
       path.lineTo(x + 8, y + 5);
       painter.drawPath(path);
+    } else /*if (mMode == RepoView::DiffList)*/ {
+        QPainterPath path;
+        path.addEllipse(x - 8, y - 8, 4, 4);
+        path.addEllipse(x + 4, y - 8, 4, 4);
+        path.addEllipse(x - 8, y - 2, 4, 4);
+        path.addEllipse(x + 4, y - 2, 4, 4);
+        path.addEllipse(x - 8, y + 4, 4, 4);
+        path.addEllipse(x + 4, y + 4, 4, 4);
+
+        path.moveTo(x - 4, y - 6);
+        path.lineTo(x + 2, y - 6);
+        path.moveTo(x - 4, y - 0);
+        path.lineTo(x + 2, y - 0);
+        path.moveTo(x - 4, y + 6);
+        path.lineTo(x + 2, y + 6);
+
+        painter.drawPath(path);
     }
   }
 
@@ -892,6 +909,9 @@ ToolBar::ToolBar(MainWindow *parent)
 
   ModeButton *tree = new ModeButton(RepoView::Tree, mode);
   mode->addButton(tree, tr("Tree View"), true);
+
+  ModeButton *tree2 = new ModeButton(RepoView::DiffList, mode);
+  mode->addButton(tree2, tr("Fiff Tree View"), true);
 
   addWidget(mode);
 

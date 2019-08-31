@@ -53,7 +53,8 @@ public:
   enum ViewMode
   {
     Diff,
-    Tree
+    Tree,
+    DiffList
   };
 
   enum MergeFlag

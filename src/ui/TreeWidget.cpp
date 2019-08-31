@@ -86,7 +86,7 @@ void TreeWidget::setDiff(
   // Reset model.
   git::Tree tree = RepoView::parentView(this)->tree();
   TreeModel *model = static_cast<TreeModel *>(mView->model());
-  model->setTree(tree, diff);
+	model->setTree(tree, diff);
 
   // Clear editor.
   mEditor->clear();
