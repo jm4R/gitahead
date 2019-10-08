@@ -19,6 +19,7 @@ add_library(dialogs
   PullRequestDialog.cpp
   RemoteDialog.cpp
   RemoteTableModel.cpp
+  RewordDialog.cpp
   SettingsDialog.cpp
   StartDialog.cpp
   SubmoduleDelegate.cpp

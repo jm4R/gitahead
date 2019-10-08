@@ -245,6 +245,9 @@ public:
   // tag
   void promptToTag(const git::Commit &commit);
 
+  // reword
+  void promptToReword(const git::Commit &commit);
+
   // reset
   void promptToReset(
     const git::Commit &commit,

@@ -26,6 +26,7 @@
 #include "dialogs/CheckoutDialog.h"
 #include "dialogs/CommitDialog.h"
 #include "dialogs/NewBranchDialog.h"
+#include "dialogs/RewordDialog.h"
 #include "dialogs/RemoteDialog.h"
 #include "dialogs/SettingsDialog.h"
 #include "dialogs/TagDialog.h"
@@ -2068,6 +2069,18 @@ void RepoView::promptToTag(const git::Commit &commit)
     LogEntry *entry = addLogEntry(text, tr("Tag"));
     if (!tag.isValid())
       error(entry, tr("tag"), link);
+  });
+
+  dialog->open();
+}
+
+void RepoView::promptToReword(const git::Commit &commit)
+{
+  //TODO:
+  RewordDialog *dialog = new RewordDialog(mRepo, commit.message(), this);
+  connect(dialog, &TagDialog::accepted, this, [this, commit, dialog] {
+    LogEntry *entry = addLogEntry("Not implemented", tr("Reword"));
+    error(entry, tr("reword"), commit.link());
   });
 
   dialog->open();

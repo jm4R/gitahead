@@ -1387,6 +1387,10 @@ void CommitList::contextMenuEvent(QContextMenuEvent *event)
         view->promptToTag(commit);
       });
 
+      menu.addAction(tr("Reword..."), [view, commit] {
+        view->promptToReword(commit);
+      });
+
       menu.addAction(tr("New Branch..."), [view, commit] {
         view->promptToCreateBranch(commit);
       });
