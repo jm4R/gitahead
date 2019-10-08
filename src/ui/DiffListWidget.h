@@ -15,6 +15,7 @@
 class FileList;
 class BlameEditor;
 class QModelIndex;
+class DiffView;
 
 namespace git
 {
@@ -37,6 +38,7 @@ public:
 private:
 	FileList *mFiles;
 	BlameEditor *mEditor;
+	DiffView *mView;
 
 	git::Diff mDiff;
 };
